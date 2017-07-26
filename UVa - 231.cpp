@@ -15,13 +15,14 @@ int main(){
     int data[M];
     int LDS[M];
     int test=0;
+    bool isItFirst=false;
     while(scanf("%d", &data[0])){
         int index=0;
         if(data[0]==-1) break;
-        else{
-            while(scanf("%d", &data[++index])){
-                if(data[index]==-1) break;
-            }
+        if(isItFirst) printf("\n");
+        isItFirst = true;
+        while(scanf("%d", &data[++index])){
+            if(data[index]==-1) break;
         }
         // checking input is working
         /*
