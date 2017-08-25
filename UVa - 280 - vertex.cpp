@@ -21,8 +21,9 @@ void checkingInput(){
 void dfs(int startingNode){
     for(int i=0; i<graph[startingNode].size(); i++){
         if(!visited[graph[startingNode][i]]){
-            visited[startingNode]=true; // marking as visited
+            visited[graph[startingNode][i]]=true; // marking as visited
             dfs(graph[startingNode][i]); // again calling dfs with adjacent value
+            //printf("%d\n", graph[startingNode][i]);
         }
     }
 }
