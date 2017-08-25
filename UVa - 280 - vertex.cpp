@@ -3,6 +3,9 @@
 
 using namespace std;
 
+/* UVa 280 */
+/* Vertex */
+
 // global declaration
 int n; // number of node
 vector<int>graph[101]; // declaring graph
@@ -23,7 +26,6 @@ void dfs(int startingNode){
         if(!visited[graph[startingNode][i]]){
             visited[graph[startingNode][i]]=true; // marking as visited
             dfs(graph[startingNode][i]); // again calling dfs with adjacent value
-            //printf("%d\n", graph[startingNode][i]);
         }
     }
 }
@@ -46,25 +48,17 @@ int main(){
             for(int i=0; i<=n; i++) visited[i]=false;
             scanf("%d", &q);
             dfs(q);
-            //int c=0;
             vector<int>temp;
             for(int i=1; i<=n; i++){
                 if(!visited[i]){
-                    //c++;
-                    //printf("%d\n", i);
                     temp.push_back(i);
                 }
             }
-            //printf("%d", c);
             printf("%d", temp.size());
-            /*for(int i=1; i<=n; i++){
-                if(!visited[i]) printf(" %d", i);
-            }*/
             vector<int>::iterator t;
             for(t=temp.begin(); t!=temp.end(); t++) printf(" %d", *t);
             printf("\n");
         }
-        //graph.clear();
     }
     return 0;
 }
