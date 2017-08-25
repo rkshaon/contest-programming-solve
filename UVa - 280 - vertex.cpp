@@ -29,6 +29,7 @@ void dfs(int startingNode){
 
 int main(){
     while(scanf("%d", &n), n!=0){
+        for(int i=0; i<101; i++) graph[i].clear();
         int sNode; // start node of edge
         while(scanf("%d", &sNode), sNode!=0){
             int eNode; // end node of edge
@@ -41,6 +42,7 @@ int main(){
         scanf("%d", &queryNo);
         for(int i=1; i<=queryNo; i++){
             int q;
+            for(int i=0; i<=n; i++) visited[i]=false;
             scanf("%d", &q);
             dfs(q);
             //int c=0;
@@ -58,7 +60,7 @@ int main(){
                 if(!visited[i]) printf(" %d", i);
             }*/
             vector<int>::iterator t;
-            for(t=temp.begin(); t!=temp.end(); t++) printf(" %d", t);
+            for(t=temp.begin(); t!=temp.end(); t++) printf(" %d", *t);
             printf("\n");
         }
         //graph.clear();
